@@ -37,7 +37,7 @@ compileTestKotlin {
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:$protobuf_version"
+        artifact = "com.google.protobuf:protoc:$protoc_version"
     }
 
     plugins {
