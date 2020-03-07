@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.yt8492.grpcsample.protobuf";
+option java_outer_classname = "GrpcSample";
+
+package api;
+
+message MessageRequest {
+    string message = 1;
+}
+
+message MessageResponse {
+    string message = 1;
+}
+
+service MessageService {
+    rpc Unary (MessageRequest) returns (MessageResponse);
+    rpc ClientStream(stream MessageRequest) returns (MessageResponse);
+    rpc ServerStream(MessageRequest) returns (stream MessageResponse);
+    rpc BidirectionalStream (stream MessageRequest) returns (stream MessageResponse);
+}
